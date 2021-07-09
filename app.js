@@ -10,12 +10,14 @@
 function app(people){
   let searchType = promptFor("Do you know the name of the person you are looking for? Enter 'yes' or 'no'", yesNo).toLowerCase();
   let searchResults;
+
   switch(searchType){
     case 'yes':
       searchResults = searchByName(people);
       break;
     case 'no':
       // TODO: search by traits
+      // searchResults = searchByMultipleTraits(people);
       break;
       default:
     app(people); // restart app
@@ -40,7 +42,8 @@ function mainMenu(person, people){
 
   switch(displayOption){
     case "info":
-    // TODO: get person's info
+      // TODO: get person's info
+      displayPerson();
     break;
     case "family":
     // TODO: get person's family
@@ -89,7 +92,11 @@ function searchByEyeColor(people){
 
 //TODO: add other trait filter functions here.
 
-
+// searchByMultipleTraits
+  // Please choose a trait you would like to start searching by
+  // EX: If they type in gender
+    // Once done searching by gender
+  // Ask them woul
 
 //#endregion
 
@@ -133,7 +140,7 @@ function promptFor(question, valid){
   do{
     response = prompt(question).trim();
     isValid = valid(response);
-  } while(response !== ""  ||  isValid === false)
+  } while(response === ""  ||  isValid === false)
   return response
 }
 
