@@ -104,6 +104,20 @@ function searchByEyeColor(people){
   return foundPerson;
 }
 
+function searchByWeight(people){
+  let weight = promptFor("How much does this person weigh?", autoValid);
+
+  let foundPerson = people.filter(function(potentialMatch){
+    if(potentialMatch.weight === weight){
+      return true;
+    }
+    else{
+      return false;
+    }
+  })
+  
+}
+
 function searchByHeight(people){
   let height = promptFor("What is the person's height in inches?", autoValid);
   
