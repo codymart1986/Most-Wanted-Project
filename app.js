@@ -114,9 +114,11 @@ function searchByWeight(people){
     else{
       return false;
     }
-  })
-  
+  })// TODO: find the person single person object using the name they entered.
+  return foundPerson;
 }
+
+
 
 function searchByHeight(people){
   let height = promptFor("What is the person's height in inches?", autoValid);
