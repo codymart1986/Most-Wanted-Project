@@ -105,10 +105,10 @@ function searchByEyeColor(people){
 }
 
 function searchByHeight(people){
-  let searchHeight = promptFor("What is the person's height in inches?", autoValid);
+  let height = promptFor("What is the person's height in inches?", autoValid);
   
   let foundPerson = people.filter(function(potentialMatch){
-  if(potentialMatch.searchHeight === searchHeight){
+  if(potentialMatch.height === height){
     return true;
   }
   else{
