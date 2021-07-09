@@ -130,7 +130,6 @@ function searchByHeight(people){
   }
 })
 }
-// TODO: find the person single person object using the name they entered.
   return foundPerson;
 //TODO: add other trait filter functions here.
 
