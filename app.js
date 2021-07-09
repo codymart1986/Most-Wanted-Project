@@ -114,15 +114,24 @@ function searchByWeight(people){
     else{
       return false;
     }
-  })// TODO: find the person single person object using the name they entered.
+  })
+  // TODO: find the person single person object using the name they entered.
   return foundPerson;
 }
 
 function searchByOccupation(people){
   let occupation = promptFor("What is this person's job?", autoValid);
 
-  let foundperson = 
-  
+  let foundPerson = people.filter(function(potentialMatch){
+    if(potentialMatch.occupation === occupation){
+      return true;
+    }
+    else{
+      return false;
+    }
+  })
+  // TODO: find the person single person object using the name they entered.
+  return foundPerson;
 }
 
 
