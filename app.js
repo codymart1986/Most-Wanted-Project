@@ -17,6 +17,8 @@ function app(people){
       break;
     case 'no':
       promptFor("Would you like to search by a trait? Enter 'yes' or 'no' ", yesNo).toLowerCase();
+    case 'yes':
+      searchResults = 
       // TODO: search by traits
       // searchResults = searchByMultipleTraits(people);
       break;
@@ -88,6 +90,8 @@ function searchByName(people){
 
 //unfinished function to search through an array of people to find matching eye colors. Use searchByName as reference.
 function searchByEyeColor(people){
+  let eyeColor = promptFor("What color is this person's eyes?", autoValid);
+  
 
 }
 
