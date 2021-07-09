@@ -16,6 +16,7 @@ function app(people){
       searchResults = searchByName(people);
       break;
     case 'no':
+      promptFor("Would you like to search by a trait? Enter 'yes' or 'no' ", yesNo).toLowerCase();
       // TODO: search by traits
       // searchResults = searchByMultipleTraits(people);
       break;
