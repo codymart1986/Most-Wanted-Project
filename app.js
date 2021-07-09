@@ -92,7 +92,16 @@ function searchByName(people){
 function searchByEyeColor(people){
   let eyeColor = promptFor("What color is this person's eyes?", autoValid);
   
-
+  let foundPerson = people.filter(function(potentialMatch){
+  if(potentialMatch.eyeColor === eyeColor){
+    return true;
+  }
+  else{
+    return false;
+  }
+})
+// TODO: find the person single person object using the name they entered.
+  return foundPerson;
 }
 
 //TODO: add other trait filter functions here.
