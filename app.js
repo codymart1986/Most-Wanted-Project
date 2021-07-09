@@ -125,19 +125,26 @@ function searchByWeight(people) {
     } else {
       return false;
     }
-  }); // TODO: find the person single person object using the name they entered.
+  });
+  // TODO: find the person single person object using the name they entered.
   return foundPerson;
 }
 
-function searchByOccupation(people){
+function searchByOccupation(people) {
   let occupation = promptFor("What is this person's job?", autoValid);
 
-  let foundperson = 
-  
+  let foundPerson = people.filter(function (potentialMatch) {
+    if (potentialMatch.occupation === occupation) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+  // TODO: find the person single person object using the name they entered.
+  return foundPerson;
 }
 
-
-function searchByHeight(people){
+function searchByHeight(people) {
   let height = promptFor("What is the person's height in inches?", autoValid);
 
   let foundPerson = people.filter(function (potentialMatch) {
@@ -209,12 +216,9 @@ function displayPerson(person) {
 //isValid: Will capture the return of the validation function callback. true(the user input is valid)/false(the user input was not valid).
 //this function will continue to loop until the user enters something that is not an empty string("") or is considered valid based off the callback function(valid).
 function promptFor(question, valid) {
-  let response;
-  let isValid;
   do {
-    response = prompt(question).trim();
-    isValid = valid(response);
-  } while (response === "" || isValid === false);
+    var response = prompt(question).trim();
+  } while (!response || !valid(response));
   return response;
 }
 
