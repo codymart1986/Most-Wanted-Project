@@ -18,10 +18,10 @@ function app(people){
     case 'no':
       promptFor("Would you like to search by a trait? Enter 'yes' or 'no' ", yesNo).toLowerCase();
     case 'yes':
-      searchResults = 
       // TODO: search by traits
       // searchResults = searchByMultipleTraits(people);
       break;
+
       default:
     app(people); // restart app
       break;
@@ -104,6 +104,19 @@ function searchByEyeColor(people){
   return foundPerson;
 }
 
+function searchByGender(people){
+  let searchHeight = promptFor("What is the person's height in inches?", autoValid);
+  
+  let foundPerson = people.filter(function(potentialMatch){
+  if(potentialMatch.searchHeight === searchHeight){
+    return true;
+  }
+  else{
+    return false;
+  }
+})
+// TODO: find the person single person object using the name they entered.
+  return foundPerson;
 //TODO: add other trait filter functions here.
 
 // searchByMultipleTraits
