@@ -169,6 +169,19 @@ function searchByGender(people) {
   });
   return foundPerson;
 }
+
+function searchByDob(people) {
+  let height = promptFor("What is the person's date of birth? (mm/dd/yyyy)", autoValid);
+
+  let foundPerson = people.filter(function (potentialMatch) {
+    if (potentialMatch.dob === dob) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+  return foundPerson;
+}
 //TODO: add other trait filter functions here.
 
 // searchByMultipleTraits
