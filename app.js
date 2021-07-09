@@ -129,7 +129,15 @@ function searchByWeight(people) {
   return foundPerson;
 }
 
-function searchByHeight(people) {
+function searchByOccupation(people){
+  let occupation = promptFor("What is this person's job?", autoValid);
+
+  let foundperson = 
+  
+}
+
+
+function searchByHeight(people){
   let height = promptFor("What is the person's height in inches?", autoValid);
 
   let foundPerson = people.filter(function (potentialMatch) {
