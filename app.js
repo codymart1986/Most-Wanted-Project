@@ -31,7 +31,7 @@ function app(people) {
         "4. Height \n" +
         "5. Weight \n" +
         "6. Occupation \n" 
-      )
+      );
       break;
 
     default:
