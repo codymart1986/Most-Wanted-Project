@@ -31,8 +31,41 @@ function app(people) {
         "3. DOB \n" +
         "4. Height \n" +
         "5. Weight \n" +
-        "6. Occupation \n" 
+        "6. Occupation \n",
+      autoValid
       );
+      
+      let filteredSearch = people;
+
+      searchOption.split(' ');
+
+      if(searchOption.includes(1)){
+        filteredSearch = searchByEyeColor(filteredSearch);
+      }
+
+      if(searchOption.includes(2)){
+        filteredSearch = searchByGender(filteredSearch);
+      }
+
+      if(searchOption.includes(3)){
+        filteredSearch = searchByDob(filteredSearch);
+      }
+
+      if(searchOption.includes(4)){
+        filteredSearch = searchByHeight(filteredSearch);
+      }
+
+      if(searchOption.includes(5)){
+        filteredSearch = searchByWeight(filteredSearch);
+      }
+
+      if(searchOption.includes(6)){
+        filteredSearch = searchByOccupation(filteredSearch);
+      }
+
+      displayPeople(filteredSearch);
+
+    case "no":
       break;
 
     default:
