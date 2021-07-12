@@ -207,10 +207,10 @@ function displayPerson(person) {
   let personInfo = "First Name: " + person.firstName + "\n";
   personInfo += "Last Name: " + person.lastName + "\n";
   personInfo += "Gender: " + person.gender + "\n";
-  personInfo += "Last Name: " + person.lastName + "\n";
-  personInfo += "Last Name: " + person.lastName + "\n";
-  personInfo += "Last Name: " + person.lastName + "\n";
-  personInfo += "Last Name: " + person.lastName + "\n";
+  personInfo += "DOB: " + person.lastName + "\n";
+  personInfo += "Height: " + person.lastName + "\n";
+  personInfo += "Weight: " + person.lastName + "\n";
+  personInfo += "Occupation: " + person.lastName + "\n";
   
   alert(personInfo);
 }
