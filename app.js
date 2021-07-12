@@ -218,6 +218,8 @@ function displayPerson(person) {
   alert(personInfo);
 }
 
+//Trying to fix merge conflict!
+
 //#endregion
 
 //Validation functions.
