@@ -13,6 +13,7 @@ function app(people) {
   ).toLowerCase();
   let searchResults;
 
+  // this is a comment
   switch (searchType) {
     case "yes":
       searchResults = searchByName(people);
