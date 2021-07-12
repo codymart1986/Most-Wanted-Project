@@ -97,11 +97,9 @@ function searchByName(people) {
       return false;
     }
   });
-  // TODO: find the person single person object using the name they entered.
   return foundPerson;
 }
 
-//unfinished function to search through an array of people to find matching eye colors. Use searchByName as reference.
 function searchByEyeColor(people) {
   let eyeColor = promptFor("What color is this person's eyes?", autoValid);
 
@@ -112,7 +110,6 @@ function searchByEyeColor(people) {
       return false;
     }
   });
-  // TODO: find the person single person object using the name they entered.
   return foundPerson;
 }
 
@@ -126,7 +123,6 @@ function searchByWeight(people) {
       return false;
     }
   });
-  // TODO: find the person single person object using the name they entered.
   return foundPerson;
 }
 
@@ -140,7 +136,6 @@ function searchByOccupation(people) {
       return false;
     }
   });
-  // TODO: find the person single person object using the name they entered.
   return foundPerson;
 }
 
@@ -209,11 +204,14 @@ function displayPeople(people) {
 }
 
 function displayPerson(person) {
-  // print all of the information about a person:
-  // height, weight, age, name, occupation, eye color.
   let personInfo = "First Name: " + person.firstName + "\n";
   personInfo += "Last Name: " + person.lastName + "\n";
-  // TODO: finish getting the rest of the information to display.
+  personInfo += "Gender: " + person.gender + "\n";
+  personInfo += "Last Name: " + person.lastName + "\n";
+  personInfo += "Last Name: " + person.lastName + "\n";
+  personInfo += "Last Name: " + person.lastName + "\n";
+  personInfo += "Last Name: " + person.lastName + "\n";
+  
   alert(personInfo);
 }
 
