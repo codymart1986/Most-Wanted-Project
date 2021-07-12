@@ -166,7 +166,10 @@ function searchByGender(people) {
 }
 
 function searchByDob(people) {
-  let height = promptFor("What is the person's date of birth? (mm/dd/yyyy)", autoValid);
+  let height = promptFor(
+    "What is the person's date of birth? (mm/dd/yyyy)",
+    autoValid
+  );
 
   let foundPerson = people.filter(function (potentialMatch) {
     if (potentialMatch.dob === dob) {
@@ -207,11 +210,10 @@ function displayPerson(person) {
   let personInfo = "First Name: " + person.firstName + "\n";
   personInfo += "Last Name: " + person.lastName + "\n";
   personInfo += "Gender: " + person.gender + "\n";
-  personInfo += "DOB: " + person.lastName + "\n";
-  personInfo += "Height: " + person.lastName + "\n";
-  personInfo += "Weight: " + person.lastName + "\n";
-  personInfo += "Occupation: " + person.lastName + "\n";
-  
+  personInfo += "Last Name: " + person.lastName + "\n";
+  personInfo += "Last Name: " + person.lastName + "\n";
+  personInfo += "Last Name: " + person.lastName + "\n";
+  personInfo += "Last Name: " + person.lastName + "\n";
   alert(personInfo);
 }
 
