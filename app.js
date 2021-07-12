@@ -26,7 +26,11 @@ function app(people) {
       let searchOption = promptFor(
       "What traits would you like to search by? (input numbers) \n" +
         "1. Eye Color \n" +
-
+        "2. Gender \n" +
+        "3. DOB \n" +
+        "4. Height \n" +
+        "5. Weight \n" +
+        "6. Occupation \n" 
       )
       break;
 
