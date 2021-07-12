@@ -23,8 +23,11 @@ function app(people) {
         yesNo
       ).toLowerCase();
     case "yes":
-      // TODO: search by traits
-      // searchResults = searchByMultipleTraits(people);
+      let searchOption = promptFor(
+      "What traits would you like to search by? (input numbers) \n" +
+        "1. Eye Color \n" +
+
+      )
       break;
 
     default:
@@ -81,7 +84,6 @@ function mainMenu(person, people) {
 /////////////////////////////////////////////////////////////////
 //#region
 
-//nearly finished function used to search through an array of people to find matching first and last name and return a SINGLE person object.
 function searchByName(people) {
   let firstName = promptFor("What is the person's first name?", autoValid);
   let lastName = promptFor("What is the person's last name?", autoValid);
