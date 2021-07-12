@@ -219,7 +219,7 @@ function displayPerson(person) {
   alert(personInfo);
 }
 
-//Trying to fix merge conflict!
+//Trying to fix merge conflict and push!
 
 //#endregion
 
