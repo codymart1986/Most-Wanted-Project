@@ -56,8 +56,7 @@ function mainMenu(person, people) {
 
   switch (displayOption) {
     case "info":
-      // TODO: get person's info
-      displayPerson();
+      displayPerson(person);
       break;
     case "family":
       // TODO: get person's family
@@ -97,7 +96,7 @@ function searchByName(people) {
       return false;
     }
   });
-  return foundPerson;
+  return foundPerson[0];
 }
 
 function searchByEyeColor(people) {
