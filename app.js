@@ -297,3 +297,9 @@ function autoValid(input) {
 function customValidation(input) {}
 
 //#endregion
+
+function findFamily(person, people){
+  let familyInfo = "First Name: " + person.firstName + "\n";
+  
+  alert(familyInfo);
+}
