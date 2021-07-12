@@ -294,7 +294,8 @@ function autoValid(input) {
 
 //Unfinished validation function you can use for any of your custom validation callbacks.
 //can be used for things like eye color validation for example.
-function customValidation(input) {}
+function customValidation(input) {  
+}
 
 //#endregion
 
