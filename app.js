@@ -383,3 +383,33 @@ function displayFamily(parents, siblings, spouse) {
   window.location.reload();
 }
 
+let overAllDescendants = [];
+//Find All Descendants
+function findDescendants(person, people){
+
+  if(people.length > 0) {
+    if(person.id == people[0].parents[0] || person.id == people[0].parents[1]){
+      overAllDescendants.push(people[0]);
+      people.shift();
+      findDescendants(person, people);
+    } else {
+      people.shift();
+      findDescendants(person, people);
+    }
+  } else {
+    displayDescendants(overAllDescendants);
+    return true;
+  }
+  return false;
+}
+
+function displayDescendants(descendants) {
+  let response = '';
+  
+  for(let i = 0; i < descendants.length; i++) {
+    response += `Child ${i+1}: ${descendants[i].firstName} ${descendants[i].lastName} \n`;
+  }
+
+  alert(response);
+ 
+}
