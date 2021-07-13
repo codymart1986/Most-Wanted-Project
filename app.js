@@ -64,8 +64,9 @@ function app(people) {
       }
 
       displayPeople(filteredSearch);
-
+      return
     case "no":
+      app(people);
       break;
 
     default:
@@ -75,6 +76,7 @@ function app(people) {
 
   // Call the mainMenu function ONLY after you find the SINGLE person you are looking for
   mainMenu(searchResults, people);
+  app(people)
 }
 
 // Menu function to call once you find who you are looking for.
@@ -100,7 +102,7 @@ function mainMenu(person, people) {
       displayPerson(person);
       break;
     case "family":
-      // TODO: get person's family
+      findFamily(person, people);
       break;
     case "descendants":
       // TODO: get person's descendants
@@ -299,9 +301,78 @@ function customValidation(input) {
 
 //#endregion
 
-function findFamily(person, people){
-  let familyInfo = "First Name: " + person.firstName + "\n";
-  
-  alert(familyInfo);
+function findFamily(person, people) {
+  //Using a filter find the parents
+  let foundParents = [];
+
+  //Finding the Parents
+  let foundPerson = people.filter(function (potentialMatch) {
+    //Find Parent 1
+    if (potentialMatch.id === person.parents[0]) {
+      foundParents.push(potentialMatch);
+      return true;
+    } else {
+      return false;
+    }
+  });
+
+  //Finding the Parents
+  let foundPerson2 = people.filter(function (potentialMatch) {
+    //Find Parent 2
+    if (potentialMatch.id === person.parents[1]) {
+      foundParents.push(potentialMatch);
+      return true;
+    } else {
+      return false;
+    }
+  })      
+
+//Using a filter find Siblings
+let foundSiblings = [];
+let foundPersonSiblings = people.filter(function (potentialMatch) {
+
+  if (potentialMatch.parents[0] === person.parents[0] || 
+      potentialMatch.parents[0] === person.parents[1] ||
+      potentialMatch.parents[1] === person.parents[1]
+    ) {
+    foundSiblings.push(potentialMatch);
+    return true;
+  } else {
+    return false;
+  }
+});
+
+  //Using a filter find Spouse
+  let foundPSpouse;
+
+  let foundSpouse = people.filter(function (potentialMatch) {
+    if (potentialMatch.id == person.currentSpouse) {
+      foundPSpouse = potentialMatch;
+      return true;
+    } else {
+      return false;
+    }
+  });
+
+  displayFamily(foundParents, foundSiblings, foundPSpouse);
+}
+
+function displayFamily(parents, siblings, spouse) {
+  let response = '';
+
+  //Prep to display Parents
+  for(let i=0; i < parents.length; i++) {
+    response += `Parent ${i+1}: ` + parents[i].firstName + ' ' + parents[i].lastName + '\n';
+  }
+
+  //Prep to display Siblings
+  for(let i=0; i < siblings.length; i++) {
+    response += `Sibling ${i+1}: ` + siblings[i].firstName + ' ' + siblings[i].lastName + '\n';
+  }
+
+  //Prep to display Spouse
+  response += `Spouse: ${spouse.firstName} ${spouse.lastName}`;
+
+  alert(response);
 }
 
