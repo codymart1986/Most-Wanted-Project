@@ -97,6 +97,12 @@ function mainMenu(person, people) {
     autoValid
   );
 
+  let people2 = [];
+
+  for(let i = 0; i < people.length; i++){
+    people2.push(people[i]);
+  }
+
   switch (displayOption) {
     case "info":
       displayPerson(person);
@@ -105,7 +111,8 @@ function mainMenu(person, people) {
       findFamily(person, people);
       break;
     case "descendants":
-      // TODO: get person's descendants
+      findDescendants(person, people2);
+      app(people);
       break;
     case "restart":
       app(people); // restart
