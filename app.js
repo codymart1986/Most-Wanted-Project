@@ -64,8 +64,9 @@ function app(people) {
       }
 
       displayPeople(filteredSearch);
-
+      return
     case "no":
+      app(people);
       break;
 
     default:
@@ -75,6 +76,7 @@ function app(people) {
 
   // Call the mainMenu function ONLY after you find the SINGLE person you are looking for
   mainMenu(searchResults, people);
+  app(people)
 }
 
 // Menu function to call once you find who you are looking for
