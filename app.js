@@ -100,7 +100,7 @@ function mainMenu(person, people) {
       displayPerson(person);
       break;
     case "family":
-      // TODO: get person's family
+      findFamily(person, people);
       break;
     case "descendants":
       // TODO: get person's descendants
@@ -323,8 +323,7 @@ function findFamily(person, people) {
     } else {
       return false;
     }
-  })     
-}  
+  })      
 
 //Using a filter find Siblings
 let foundSiblings = [];
@@ -352,3 +351,26 @@ let foundPersonSiblings = people.filter(function (potentialMatch) {
       return false;
     }
   });
+
+  displayFamily(foundParents, foundSiblings, foundPSpouse);
+}
+
+function displayFamily(parents, siblings, spouse) {
+  let response = '';
+
+  //Prep to display Parents
+  for(let i=0; i < parents.length; i++) {
+    response += `Parent ${i+1}: ` + parents[i].firstName + ' ' + parents[i].lastName + '\n';
+  }
+
+  //Prep to display Siblings
+  for(let i=0; i < siblings.length; i++) {
+    response += `Sibling ${i+1}: ` + siblings[i].firstName + ' ' + siblings[i].lastName + '\n';
+  }
+
+  //Prep to display Spouse
+  response += `Spouse: ${spouse.firstName} ${spouse.lastName}`;
+
+  alert(response);
+}
+
