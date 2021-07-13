@@ -325,3 +325,30 @@ function findFamily(person, people) {
     }
   })     
 }  
+
+//Using a filter find Siblings
+let foundSiblings = [];
+let foundPersonSiblings = people.filter(function (potentialMatch) {
+
+  if (potentialMatch.parents[0] === person.parents[0] || 
+      potentialMatch.parents[0] === person.parents[1] ||
+      potentialMatch.parents[1] === person.parents[1]
+    ) {
+    foundSiblings.push(potentialMatch);
+    return true;
+  } else {
+    return false;
+  }
+});
+
+  //Using a filter find Spouse
+  let foundPSpouse;
+
+  let foundSpouse = people.filter(function (potentialMatch) {
+    if (potentialMatch.id == person.currentSpouse) {
+      foundPSpouse = potentialMatch;
+      return true;
+    } else {
+      return false;
+    }
+  });
