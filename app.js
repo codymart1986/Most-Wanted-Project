@@ -115,6 +115,7 @@ function mainMenu(person, people) {
     default:
       return mainMenu(person, people); // ask again
   }
+  window.location.reload();
 }
 
 //#endregion
