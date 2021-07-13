@@ -208,10 +208,7 @@ function searchByGender(people) {
 }
 
 function searchByDob(people) {
-  let height = promptFor(
-    "What is the person's date of birth? (mm/dd/yyyy)",
-    autoValid
-  );
+  let dob = promptFor("What is the person's date of birth? (mm/dd/yyyy)", autoValid);
 
   let foundPerson = people.filter(function (potentialMatch) {
     if (potentialMatch.dob === dob) {
