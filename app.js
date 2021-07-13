@@ -374,8 +374,11 @@ function displayFamily(parents, siblings, spouse) {
   }
 
   //Prep to display Spouse
-  response += `Spouse: ${spouse.firstName} ${spouse.lastName}`;
+  if(spouse != null) {
+    response += `Spouse: ${spouse.firstName} ${spouse.lastName}`;
+  }
 
   alert(response);
+  window.location.reload();
 }
 
