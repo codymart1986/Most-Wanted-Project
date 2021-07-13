@@ -226,7 +226,7 @@ function searchByDob(people) {
   });
   return foundPerson;
 }
-//TODO: add other trait filter functions here.
+//TODO: add other trait filter functions 
 
 // searchByMultipleTraits
 // Please choose a trait you would like to start searching by
