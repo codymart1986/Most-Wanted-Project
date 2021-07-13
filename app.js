@@ -299,8 +299,29 @@ function customValidation(input) {
 
 //#endregion
 
-function findFamily(person, people){
-  let familyInfo = "First Name: " + person.firstName + "\n";
-  
-  alert(familyInfo);
-}
+function findFamily(person, people) {
+  //Using a filter find the parents
+  let foundParents = [];
+
+  //Finding the Parents
+  let foundPerson = people.filter(function (potentialMatch) {
+    //Find Parent 1
+    if (potentialMatch.id === person.parents[0]) {
+      foundParents.push(potentialMatch);
+      return true;
+    } else {
+      return false;
+    }
+  });
+
+  //Finding the Parents
+  let foundPerson2 = people.filter(function (potentialMatch) {
+    //Find Parent 2
+    if (potentialMatch.id === person.parents[1]) {
+      foundParents.push(potentialMatch);
+      return true;
+    } else {
+      return false;
+    }
+  })     
+}  
